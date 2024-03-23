@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useSelector,useDispatch } from 'react-redux'
 import ProductComponent from './ProductComponent'
 import { setProducts } from '../redux/actions/productActions'
+import Mainpic from './Mainpic'
 export default function ProductListing() {
     const products=useSelector((state)=>state)
     const dispatch=useDispatch()
@@ -20,6 +21,7 @@ export default function ProductListing() {
     // console.log("Products:",products)
   return (
     <div>
+      <Mainpic/>
       <ProductComponent />
     </div>
   )
