@@ -9,8 +9,8 @@ export default function ProductDetail() {
     const product=useSelector((state)=>state.product)
     const {productId}=useParams()
     const dispatch=useDispatch()
-    console.log("Product:",product)
-    console.log("Product Id:",productId)
+    // console.log("Product:",product)
+    // console.log("Product Id:",productId)
     const fetchProductDetail=async()=>{
         const response=await axios.get(`https://fakestoreapi.com/products/${productId}`).catch((err)=>{
             console.log("Err",err)
@@ -28,13 +28,13 @@ export default function ProductDetail() {
     {Object.keys(product).length===0?(
         <div>...Loading</div>
     ):(
-        <div class="two-section">
-        <div class="single-pro-image">
-            <i class="fa-solid fa-arrow-left" id="backward"></i>
+        <div className="two-section">
+        <div className="single-pro-image">
+            <i className="fa-solid fa-arrow-left" id="backward"></i>
             <img src={product.image} width="100%" id="MainImg" alt=""/>
             
         </div>
-        <div class="single-pro-details">
+        <div className="single-pro-details">
             <h6>{product.category}</h6>
             <h2>{product.price}</h2>
             <select>
@@ -45,7 +45,7 @@ export default function ProductDetail() {
                 <option>Larg</option>
             </select>
             <input type="number" value="1"/>
-            <button class="normal">Add To Cart</button>
+            <button className="normal">Add To Cart</button>
             <h4>Product Details</h4>
             <p>{product.description}</p>
         </div>

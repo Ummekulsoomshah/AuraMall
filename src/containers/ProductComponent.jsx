@@ -1,7 +1,10 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { addToCart } from '../redux/actions/productActions'
 export default function ProductComponent() {
+    const dispatch = useDispatch()
     const products = useSelector((state) => state.allProducts.products)
     const renderList = products.map((product) => {
         return (
@@ -15,10 +18,8 @@ export default function ProductComponent() {
                 <div className="item-name">{product.description}</div>
                 <div className="price">
                     <span className="current-price">Rs {product.price}</span>
-                   
-                   
                 </div>
-                <button className="btn-add-bag" onclick="addToBag(${product.id})">Add to Bag</button>
+                <button className="btn-add-bag" onClick={() => dispatch(addToCart(product))}>Add to Bag</button>
             </div>
             </Link>
         )

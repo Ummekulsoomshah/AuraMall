@@ -2,44 +2,47 @@ import React from 'react'
 import { IoPerson } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
-
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 export default function Header() {
-  return (
-    <>
-     <header>
-        <div class="logo_container">
-            <a href="#"><img class="myntra_home" src="/AuraM.png" alt="AuraMall"/></a>
-        </div>
-        <nav class="nav_bar">
-            <a href="#">Men</a>
-            <a href="#">Women</a>
-            <a href="#">Kids</a>
-            <a href="#">Home & Living</a>
-            <a href="#">Beauty</a>
-            <a href="#">Studio <sup>New</sup></a>
-        </nav>
-        <div class="search_bar">
-            <span class="material-symbols-outlined search_icon">search</span>
-            <input class="search_input" placeholder="Search for products, brands and more"/>
-        </div>
-        <div class="action_bar">
-            <div class="action_container">
-            <IoPerson />
-                <span class="action_name">Profile</span>
-            </div>
+    const cart = useSelector((state) => state.allProducts.cart)
+    return (
+        <>
+            <header>
+                <div className="logo_container">
+                    <a href="#"><img className="myntra_home" src="/AuraM.png" alt="AuraMall" /></a>
+                </div>
+                <nav className="nav_bar">
+                    <a href="#">Men</a>
+                    <a href="#">Women</a>
+                    <a href="#">Kids</a>
+                    <a href="#">Home & Living</a>
+                    <a href="#">Beauty</a>
+                    <a href="#">Studio <sup>New</sup></a>
+                </nav>
+                <div className="search_bar">
+                    <span className="material-symbols-outlined search_icon">search</span>
+                    <input className="search_input" placeholder="Search for products, brands and more" />
+                </div>
+                <div className="action_bar">
+                    <div className="action_container">
+                        <IoPerson />
+                        <span className="action_name">Profile</span>
+                    </div>
 
-            <div class="action_container">
-            <CiHeart />
-                <span class="action_name">Wishlist</span>
-            </div>
-
-            <a class="action_container" href="pages/bag.html">
-                <IoBagOutline />
-                <span class="action_name">Bag</span>
-                <span class="bag-item-count">0</span>
-            </a>
-        </div>
-    </header>
-    </>
-  )
+                    <div className="action_container">
+                        <CiHeart />
+                        <span className="action_name">Wishlist</span>
+                    </div>
+                    <Link to="/Bag">
+                        <div className="action_container">
+                            <IoBagOutline />
+                            <span className="action_name">Bag</span>
+                            <span className="bag-item-count">{cart.length}</span>
+                        </div>
+                    </Link>
+                </div>
+            </header>
+        </>
+    )
 }

@@ -7,7 +7,7 @@ import { setProducts } from '../redux/actions/productActions'
 export default function ProductListing() {
     const products=useSelector((state)=>state)
     const dispatch=useDispatch()
-    console.log(products)
+    // console.log(products)
     const fetchProducts=async()=>{
         const response=await axios.get("https://fakestoreapi.com/products").catch((err)=>{
             console.log("Err",err)
@@ -17,10 +17,10 @@ export default function ProductListing() {
     useEffect(()=>{
         fetchProducts()
     },[])
-    console.log("Products:",products)
+    // console.log("Products:",products)
   return (
     <div>
-      <ProductComponent/>
+      <ProductComponent />
     </div>
   )
 }
