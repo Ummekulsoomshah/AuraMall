@@ -4,8 +4,14 @@ import { CiHeart } from "react-icons/ci";
 import { IoBagOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { setSearchTerm } from '../redux/actions/productActions';
+import { useDispatch } from 'react-redux';
 export default function Header() {
     const cart = useSelector((state) => state.allProducts.cart)
+    const dispatch = useDispatch();
+    const handleSearch = (event) => {
+        dispatch(setSearchTerm(event.target.value));
+    };
     return (
         <>
             <header>
@@ -20,12 +26,10 @@ export default function Header() {
                     <a href="#">Women</a>
                     <a href="#">Kids</a>
                     <a href="#">Home & Living</a>
-                    <a href="#">Beauty</a>
-                    <a href="#">Studio <sup>New</sup></a>
                 </nav>
                 <div className="search_bar">
                     <span className="material-symbols-outlined search_icon">search</span>
-                    <input className="search_input" placeholder="Search for products, brands and more" />
+                    <input className="search_input" placeholder="Search for products, brands and more" onChange={handleSearch} />
                 </div>
                 <div className="action_bar">
                     <div className="action_container">

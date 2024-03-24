@@ -31,3 +31,10 @@ export const removeFromCart = (product) => {
         payload: product,
     }
 }
+
+export const setSearchTerm = (searchTerm) => {
+    return {
+        type: ActionTypes.SET_SEARCH_TERM,
+        payload: searchTerm,
+    };
+};

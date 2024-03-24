@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import { addToCart } from '../redux/actions/productActions'
 import { selectedProduct,removeSelectedProduct } from '../redux/actions/productActions'
 import { useSelector } from 'react-redux'
 export default function ProductDetail() {
@@ -45,7 +46,7 @@ export default function ProductDetail() {
                 <option>Larg</option>
             </select>
             <input type="number" value="1"/>
-            <button className="normal">Add To Cart</button>
+            <button className="normal" onClick={() => dispatch(addToCart(product))}>Add To Cart</button>
             <h4>Product Details</h4>
             <p>{product.description}</p>
         </div>

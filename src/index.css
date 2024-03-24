@@ -372,10 +372,6 @@ a.action_container:link {
 
 }
 
-.single-pro-details button {
-    background-color: #088178;
-    color: #fff;
-}
 
 .single-pro-details input:focus {
     outline: none;
@@ -533,4 +529,13 @@ a.action_container:link {
     height: 600px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+
+  .normal{
+    border-radius: 10px;
+    background-color: #a8d5e7;
+    outline: none;
+    padding: 10px;
+    border: none;
   }
