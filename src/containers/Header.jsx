@@ -26,7 +26,7 @@ export default function Header() {
                 </nav>
                 <div className="search_bar">
                     <span className="material-symbols-outlined search_icon">search</span>
-                    <input className="search_input" placeholder="Search for products, brands and more" onChange={handleSearch} />
+                    <input className="search_input" placeholder="Search and filter by catagory" onChange={handleSearch} />
                 </div>
                 <div className="action_bar">
                     <div className="action_container">
