@@ -4,5 +4,6 @@ export const ActionTypes={
     REMOVE_SELECTED_PRODUCT:"REMOVE_SELECTED_PRODUCT",
     ADD_TO_CART: 'ADD_TO_CART',
     REMOVE_FROM_CART: 'REMOVE_FROM_CART',
+    SET_SEARCH_TERM: 'SET_SEARCH_TERM',
         // other action types...
 }

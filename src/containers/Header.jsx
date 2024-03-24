@@ -15,9 +15,6 @@ export default function Header() {
     return (
         <>
             <header>
-            
-
-                
                 <div className="logo_container">
                     <a href="#"><img className="myntra_home" src="/AuraM.png" alt="AuraMall" /></a>
                 </div>

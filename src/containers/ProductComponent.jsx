@@ -5,27 +5,31 @@ import { Link } from 'react-router-dom'
 import { addToCart } from '../redux/actions/productActions'
 export default function ProductComponent() {
     const dispatch = useDispatch()
-    
+    const searchTerm = useSelector((state) => state.allProducts.searchTerm);
     const products = useSelector((state) => state.allProducts.products)
-    const renderList = products.map((product) => {
+    console.log(products)
+
+    const renderList = products.filter((product)=>{
+        return searchTerm
+        ? product.category.toLowerCase().includes(searchTerm) 
+        : product;
+    }).map((product) => {
         return (
             <Link to={`/product/${product.id}`}>
                 <div className="items-container">
-
-               
-            <div className="item-container">
+                <div className="item-container">
                 <img className="item-image" src={product.image} alt="item image" />
-                <div className="rating">
-                    {product.rating.rate} ⭐ | {product.rating.count}
+                        <div className="rating">
+                            {product.rating.rate} ⭐ | {product.rating.count}
+                        </div>
+                        <div className="company-name">{product.category}</div>
+                        <div className="item-name">{product.description}</div>
+                        <div className="price">
+                            <span className="current-price">Rs {product.price}</span>
+                        </div>
+                        <button className="btn-add-bag" onClick={() => dispatch(addToCart(product))}>Add to Bag</button>
+                    </div>
                 </div>
-                <div className="company-name">{product.category}</div>
-                <div className="item-name">{product.description}</div>
-                <div className="price">
-                    <span className="current-price">Rs {product.price}</span>
-                </div>
-                <button className="btn-add-bag" onClick={() => dispatch(addToCart(product))}>Add to Bag</button>
-            </div>
-            </div>
             </Link>
         )
     })
