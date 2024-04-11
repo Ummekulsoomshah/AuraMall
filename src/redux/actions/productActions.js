@@ -38,3 +38,10 @@ export const setSearchTerm = (searchTerm) => {
         payload: searchTerm,
     };
 };
+
+
+
+export const setPlaceOrder = (value) => ({
+    type: ActionTypes.SET_PLACE_ORDER,
+    payload: value,
+});

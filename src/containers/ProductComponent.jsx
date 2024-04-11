@@ -1,10 +1,7 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { addToCart } from '../redux/actions/productActions'
 export default function ProductComponent() {
-    const dispatch = useDispatch()
     const searchTerm = useSelector((state) => state.allProducts.searchTerm);
     const products = useSelector((state) => state.allProducts.products)
     console.log(products)
@@ -15,7 +12,7 @@ export default function ProductComponent() {
         : product;
     }).map((product) => {
         return (
-            <Link to={`/product/${product.id}`}>
+            <Link to={`/product/${product.id}`} style={{ textDecoration: 'none'}}>
                 <div className="items-container">
                 <div className="item-container">
                 <img className="item-image" src={product.image} alt="item image" />
@@ -27,7 +24,6 @@ export default function ProductComponent() {
                         <div className="price">
                             <span className="current-price">Rs {product.price}</span>
                         </div>
-                        <button className="btn-add-bag" onClick={() => dispatch(addToCart(product))}>Add to Bag</button>
                     </div>
                 </div>
             </Link>

@@ -5,7 +5,7 @@ import { IoBagOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { setSearchTerm } from '../redux/actions/productActions';
-import { useDispatch } from 'react-redux';
+import {useDispatch} from "react-redux"
 export default function Header() {
     const cart = useSelector((state) => state.allProducts.cart)
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ export default function Header() {
     };
     return (
         <>
-            <header>
+            <header className='nav'>
                 <div className="logo_container">
                     <a href="#"><img className="myntra_home" src="/AuraM.png" alt="AuraMall" /></a>
                 </div>
@@ -38,7 +38,7 @@ export default function Header() {
                         <CiHeart />
                         <span className="action_name">Wishlist</span>
                     </div>
-                    <Link to="/Bag">
+                    <Link to="/Bag" style={{ textDecoration: 'none'}}>
                         <div className="action_container">
                             <IoBagOutline />
                             <span className="action_name">Bag</span>

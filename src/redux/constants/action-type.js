@@ -5,5 +5,6 @@ export const ActionTypes={
     ADD_TO_CART: 'ADD_TO_CART',
     REMOVE_FROM_CART: 'REMOVE_FROM_CART',
     SET_SEARCH_TERM: 'SET_SEARCH_TERM',
+    SET_PLACE_ORDER : 'SET_PLACE_ORDER'
         // other action types...
 }

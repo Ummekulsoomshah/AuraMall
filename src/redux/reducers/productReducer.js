@@ -4,6 +4,7 @@ const initialState = {
     products: [],
     cart: [],
     searchTerm: '',
+    placeorder: false,
 }
 
 export const productReducer = (state = initialState, { type, payload }) => {
@@ -28,6 +29,11 @@ export const productReducer = (state = initialState, { type, payload }) => {
             return {
                 ...state,
                 searchTerm: payload,
+            };
+        case ActionTypes.SET_PLACE_ORDER:
+            return {
+                ...state,
+                placeorder: payload,
             };
 
         default:

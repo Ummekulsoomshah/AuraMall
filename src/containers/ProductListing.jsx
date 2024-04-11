@@ -20,7 +20,7 @@ export default function ProductListing() {
     },[])
     // console.log("Products:",products)
   return (
-    <div>
+    <div className='landingpage'>
       <Mainpic/>
       <ProductComponent />
     </div>

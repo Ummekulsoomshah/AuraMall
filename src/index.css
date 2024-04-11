@@ -328,9 +328,7 @@ header {
     font-weight: 700;
     cursor: pointer;
 }
-.action_container {
-    text-decoration: none;
-}
+
 a.action_container:link {
     color:black;
 }
@@ -344,6 +342,7 @@ a.action_container:link {
 .two-section{
     display: flex;
     margin: 50px;
+    margin-top: 80px;
 }
 .single-pro-details h6 {
     padding: 40px 0 20px 0;
@@ -395,11 +394,12 @@ a.action_container:link {
   }
   
   .bag-page {
+    padding-top: 80px;
     width: 75%;
     margin-left: 12.5%;
   }
   
-  .bag-summary {
+  .bag-summary{
     vertical-align: top;
     display: inline-block;
     width: 35%;
@@ -539,3 +539,57 @@ a.action_container:link {
     padding: 10px;
     border: none;
   }
+
+  .nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.landingpage{
+      padding-top: 100px;
+
+  }
+
+
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,.2);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup-inner{
+    position: relative;
+    padding: 32px;
+    width: 100%;
+    max-width: 350px;
+    background-color: #fff;
+    height: 300px;
+}
+.popup-inner .close-btn{
+    position: relative;
+    border: none;
+    top: 16px;
+    left: 280px;
+    font-weight: bold;
+}
+
+
+.bagimg {
+    position: relative;
+    top: -165px;
+    left: 222px;
+    z-index: 1;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+}
+.bagimg img{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
