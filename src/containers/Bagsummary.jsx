@@ -13,11 +13,11 @@ export default function Bagsummary() {
     const totalMRP = cart.reduce((acc, item) => acc + item.price, 0)
     return (
         <>
-            <div className="bag-summary">
+            {!placeorder?<div className="bag-summary">
                 <button className="btn-place-order" onClick={() => setbuttonpopup(true)}>
                     <div className="css-xjhrni">CHECKOUT</div>
                 </button>
-            </div>
+            </div>:""}
             <BagSummaryPopup trigger={buttonpopup} settrigger={setbuttonpopup} >
                 
                 <div className="bag-details-container">

@@ -6,8 +6,10 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { setSearchTerm } from '../redux/actions/productActions';
 import {useDispatch} from "react-redux"
+
 export default function Header() {
     const cart = useSelector((state) => state.allProducts.cart)
+    const placeorder=useSelector((state)=>state.allProducts.placeorder)
     const dispatch = useDispatch();
     const handleSearch = (event) => {
         dispatch(setSearchTerm(event.target.value));
@@ -42,7 +44,7 @@ export default function Header() {
                         <div className="action_container">
                             <IoBagOutline />
                             <span className="action_name">Bag</span>
-                            <span className="bag-item-count">{cart.length}</span>
+                            <span className="bag-item-count">{!placeorder?cart.length: 0}</span>
                         </div>
                     </Link>
                 </div>
