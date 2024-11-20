@@ -18,7 +18,7 @@ export default function Header() {
         <>
             <header className='nav'>
                 <div className="logo_container">
-                    <a href="#"><img className="myntra_home" src="/AuraM.png" alt="AuraMall" /></a>
+                    <a href="#"><img className="myntra_home" src="/Black and Green Flat Illustrated Organic Cosmetics Logo.png" alt="AuraMall" /></a>
                 </div>
                 <nav className="nav_bar">
                     <a href="#">Men</a>

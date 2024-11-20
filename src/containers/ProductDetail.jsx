@@ -11,10 +11,11 @@ export default function ProductDetail() {
     const { productId } = useParams()
     const dispatch = useDispatch()
     const fetchProductDetail = async () => {
-        const response = await axios.get(`https://fakestoreapi.com/products/${productId}`).catch((err) => {
+        const response = await axios.get('/data.json').catch((err) => {
             console.log("Err", err)
         })
-        dispatch(selectedProduct(response.data))
+        const product = response.data.find((p) => p.id === parseInt(productId))
+        dispatch(selectedProduct(product))
     }
     useEffect(() => {
         if (productId && productId !== "") fetchProductDetail()

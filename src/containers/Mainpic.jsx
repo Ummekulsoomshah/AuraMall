@@ -11,15 +11,15 @@ export default function Mainpic() {
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active carousel-item-start mypic">
-                    <img class="bd-placeholder-img" width="100%" height="100%" src="m1.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" />
+                    <img class="bd-placeholder-img" width="100%" height="100%" src="perfume-6518634_1280.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" />
                       
                     </div>
                     <div class="carousel-item carousel-item-next carousel-item-start mypic">
-                    <img class="bd-placeholder-img" width="100%" height="100%" src="m2.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" />
+                    <img class="bd-placeholder-img" width="100%" height="100%" src="the-soap-6518625_1280.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" />
                         
                     </div>
                     <div class="carousel-item mypic">
-                    <img class="bd-placeholder-img" width="100%" height="100%" src="m3.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" />
+                    <img class="bd-placeholder-img" width="100%" height="100%" src="curology-t_ua25SR8mg-unsplash.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" />
                        
                     </div>
                 </div>
